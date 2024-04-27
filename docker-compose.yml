@@ -60,7 +60,7 @@ services:
       - traefik.http.services.ghost.loadbalancer.sticky.cookie=true
       - traefik.http.routers.ghost-http.rule=Host(`${GHOST_DNS}`)
       - traefik.http.routers.ghost-http.entrypoints=web
-      - traefik.http.routers.ghost-http.middlewares=https-only@file
+      - traefik.http.routers.ghost-http.middlewares=httpsOnly@file
       - traefik.http.routers.ghost-https.service=ghost
       - traefik.http.routers.ghost-https.entrypoints=websecure
       - traefik.http.routers.ghost-https.rule=Host(`${GHOST_DNS}`)
