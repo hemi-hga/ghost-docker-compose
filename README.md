@@ -8,7 +8,12 @@ Author: [Robert Chang](https://github.com/RobertChang0722/)
 
 1. Install docker on your server
 2. Clone this repository
-3. Rename the `.env.example` to `.env`
+3. Rename the `.env-template` to `.env`
+
+```bash
+$ mv .env-template .env
+```
+
 4. Modify the `.env` file the MUST HAVE variables
 5. Fill in your email in the traefik.yml file (line 23)
 6. Change the permission of `acme.json` to 600
