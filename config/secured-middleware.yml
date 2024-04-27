@@ -1,0 +1,24 @@
+http:
+  middlewares:
+    https-only:
+      redirectScheme:
+        scheme: https
+    customHeaders:
+      headers:
+        customrequestheaders:
+          - permissions-Policy: vibrate=(self), geolocation=(self), midi=(self), notifications=(self), push=(self), microphone=(), $
+          - X-Permitted-Cross-Domain-Policies: none
+          - expect-c: max-age=604800, report-uri="https://oak.ct.letsencrypt.org/2024"
+        frameDeny: true
+        referrerpolicy: same-origin
+        forcestsheader: true
+        stsseconds: 31536000
+        stspreload: true
+        stsincludesubdomains: true
+        contenttypenosniff: true
+        browserxssfilter: true
+    secured:
+      chain:
+        middlewares:
+          - https-only
+          - customHeaders

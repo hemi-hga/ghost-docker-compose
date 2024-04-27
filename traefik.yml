@@ -1,0 +1,26 @@
+log:
+  level: INFO
+
+accesslog:
+  format: common
+
+entryPoints:
+  web:
+    address: :80
+  websecure:
+    address: :443
+
+providers:
+  docker:
+    network: "DOCKER_NETWORK" # change it
+    exposedbydefault: false
+  file:
+    directory: /etc/traefik/config
+
+certificatesResolvers:
+  letencrypt:
+    acme:
+      email: "YOUR EMAIL" # change it
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
