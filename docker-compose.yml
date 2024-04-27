@@ -5,10 +5,13 @@ x-networks: &network
     - ghost-internal-network
 
 services:
-  proxy:
+  traefik:
     image: traefik:latest
     <<: *network
-    container_name: proxy
+    container_name: traefik
+    restart: unless-stopped
+    depends_on:
+      - ghost
     ports:
       - 80:80
       - 443:443
@@ -20,7 +23,11 @@ services:
 
   ghost:
     image: ghost:5.82.2-alpine
+    <<: *network
     restart: always
+    container_name: ghost
+    depends_on:
+      - ghostdb
     labels:
       - traefik.enable=true
       - traefik.http.services.app.loadbalancer.server.port=2368
