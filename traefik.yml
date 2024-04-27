@@ -12,7 +12,7 @@ entryPoints:
 
 providers:
   docker:
-    network: "DOCKER_NETWORK" # change it
+    network: traefik
     exposedbydefault: false
   file:
     directory: /etc/traefik/config
