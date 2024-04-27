@@ -48,6 +48,7 @@ services:
       # adapters__storage__s3__secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
       # adapters__storage__s3__bucket: ${AWS_BUCKET}
       # adapters__storage__s3__region: ${AWS_REGION}
+      # adapters__storage__s3__assetHost: ${AWS_ASSET_HOST}
     volumes:
       - ghostdata:/var/lib/ghost/content
     labels:
