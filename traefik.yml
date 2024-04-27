@@ -18,7 +18,7 @@ providers:
     directory: /etc/traefik/config
 
 certificatesResolvers:
-  letencrypt:
+  letsencrypt:
     acme:
       email: "YOUR EMAIL" # change it
       storage: acme.json
