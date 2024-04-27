@@ -19,7 +19,9 @@ services:
       - traefik.docker.network=traefik
 
   ghost:
-    image: ghost:5.82.2-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     networks:
       - traefik
       - backend
