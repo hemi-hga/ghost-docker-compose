@@ -10,7 +10,7 @@ http:
           permissions-Policy: "vibrate=(self), geolocation=(self), midi=(self), notifications=(self), push=(self), microphone=(), camera=()"
           X-Permitted-Cross-Domain-Policies: "none"
           expect-ct: "max-age=604800, report-uri='https://oak.ct.letsencrypt.org/2024'"
-        frameDeny: true
+        frameDeny: false
         referrerpolicy: "same-origin"
         forceSTSHeader: true
         STSSeconds: 31536000
