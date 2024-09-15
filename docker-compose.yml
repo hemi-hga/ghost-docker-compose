@@ -19,9 +19,7 @@ services:
       - traefik.docker.network=traefik
 
   ghost:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghost:5-alpine
     networks:
       - traefik
       - backend
